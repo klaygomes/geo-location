@@ -1,0 +1,30 @@
+{
+    "presets": [
+      "next/babel",
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7",
+              "Edge >= 13"
+            ]
+          }
+        }
+      ],
+      "react"
+    ],
+    "plugins": [  
+      [
+        "transform-define",
+        "./env-config.js"
+      ],
+      "transform-object-rest-spread",  
+      [
+        "transform-class-properties", 
+        { "spec": false }
+      ], 
+      "transform-runtime"
+    ]
+  }
