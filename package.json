@@ -4,6 +4,7 @@
   "description": "* As a curious web surfer, I want to be able to locate both me and any website on a map.\r * I sometimes use a desktop, sometimes a tablet and sometimes a cell phone, so I need a responsive web page.",
   "main": "index.js",
   "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,10 +12,12 @@
     "url": "git+ssh://git@bitbucket.org/klaygomes/ui-challenge.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Cleiton Gomes <klaygomes@gmail.com>",
   "license": "ISC",
   "homepage": "https://bitbucket.org/klaygomes/ui-challenge#readme",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/react": "^3.2.15",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
