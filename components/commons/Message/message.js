@@ -1,6 +1,4 @@
-import React from 'react'
-import styled, {css} from 'styled-components'
-
+import styled from 'styled-components'
 import {typography} from '../../../theme'
 
 const Message = styled.div`
@@ -8,6 +6,7 @@ const Message = styled.div`
     font-size: ${typography.regularFontSize};
     color:  ${({theme}) => theme.textColor};
 
+    cursor: pointer;
     padding: 2rem;
     text-align: center;
 `

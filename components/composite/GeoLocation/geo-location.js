@@ -30,10 +30,12 @@ class GeoLocation extends React.Component {
     onHostname: PropTypes.func,
     onRequestMyLocation: PropTypes.func,
     onResetMyLocation: PropTypes.func,
+    onErrorClick: PropTypes.func,
     className: PropTypes.string,
     myLocation: locationShape,
     hostnameLocation: locationShape,
     showMap: PropTypes.bool,
+    showError: PropTypes.bool,
     locationData: PropTypes.shape(locationShape)
   }
   constructor (props) {
@@ -41,6 +43,7 @@ class GeoLocation extends React.Component {
     this.handleRequestMyLocation = this.handleRequestMyLocation.bind(this)
     this.handleResetMyLocation = this.handleResetMyLocation.bind(this)
     this.handleHostnameDispatch = this.handleHostnameDispatch.bind(this)
+    this.handleOnErrorClick = this.handleOnErrorClick.bind(this)
   }
   handleHostnameDispatch (hostname) {
     if (typeof this.props.onHostname === 'function') {
@@ -57,17 +60,23 @@ class GeoLocation extends React.Component {
       this.props.onResetMyLocation(ev)
     }
   }
+  handleOnErrorClick (ev) {
+    if (typeof this.props.onErrorClick === 'function') {
+      this.props.onErrorClick(ev)
+    }
+  }
   render () {
     const {
       className,
       myLocation,
       hostnameLocation,
       showMap,
+      showError,
       locationData
     } = this.props
     return (
       <React.Fragment>
-        <Message>Something went wrong, please try again...</Message>
+        {showError && <Message onClick={this.handleOnErrorClick}>Something went wrong, please try again...</Message>}
         <Title>GeoLocation Test</Title>
         <div className={className}>
           <Column first>

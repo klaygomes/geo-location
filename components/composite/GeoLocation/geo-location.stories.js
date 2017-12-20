@@ -31,3 +31,17 @@ storiesOf('Composite/GeoLocation', module)
       />
     </React.Fragment>
   ))
+  .add('With handlers, data and error', () => (
+    <React.Fragment>
+      <p>This is a full populated example</p>
+      <GeoLocation
+        {...locations}
+        showError
+        locationData={panelInformation}
+        onErrorClick={action('onErrorClick')}
+        onHostname={action('onHostname')}
+        onRequestMyLocation={action('onRequestMyLocation')}
+        onResetMyLocation={action('onResetMyLocation')}
+      />
+    </React.Fragment>
+  ))

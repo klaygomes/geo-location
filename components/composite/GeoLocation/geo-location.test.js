@@ -31,4 +31,10 @@ describe('<GeoLocation />', () => {
     wrapper.find('LocationPanel').props().onRequestMyLocation()
     expect(onRequestMyLocation.mock.calls.length).toBe(1)
   })
+  it('should delegates handleOnErrorClick event', () => {
+    const onErrorClick = jest.fn()
+    const wrapper = mount(<GeoLocation onErrorClick={onErrorClick} showError />)
+    wrapper.find('Message').props().onClick()
+    expect(onErrorClick.mock.calls.length).toBe(1)
+  })
 })

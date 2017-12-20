@@ -21,13 +21,19 @@ describe('<HostNameDispatcher />', () => {
 
       wrapper = mount(<HostNameDispatcher onDispatch={mockCallback} />)
       wrapper.find('TextBox').simulate('change', event)
-      wrapper.find('Dispatcher').simulate('click')
+
       wrapper.update()
     })
     it('should not display an error if invalid hostname', () => {
+      wrapper.find('Dispatcher').simulate('click')
       expect(wrapper.find('Error').exists()).toBeFalsy()
     })
     it('should dispatch hostname', () => {
+      wrapper.find('Dispatcher').simulate('click')
+      expect(mockCallback.mock.calls[0][0]).toBe(event.target.value)
+    })
+    it('should dispatch hostname', () => {
+      wrapper.find('TextBox').simulate('keyPress', {key: 'Enter', shiftKey: false})
       expect(mockCallback.mock.calls[0][0]).toBe(event.target.value)
     })
   })
@@ -39,10 +45,14 @@ describe('<HostNameDispatcher />', () => {
 
       wrapper = mount(<HostNameDispatcher onDispatch={mockCallback} />)
       wrapper.find('TextBox').simulate('change', event)
-      wrapper.find('Dispatcher').simulate('click')
       wrapper.update()
     })
     it('should display an error if invalid hostname', () => {
+      wrapper.find('Dispatcher').simulate('click')
+      expect(wrapper.find('Error').exists()).toBeTruthy()
+    })
+    it('should display an error if invalid hostname', () => {
+      wrapper.find('TextBox').simulate('keyPress', {key: 'Enter', shiftKey: false})
       expect(wrapper.find('Error').exists()).toBeTruthy()
     })
     it('should not dispatch hostname', () => {

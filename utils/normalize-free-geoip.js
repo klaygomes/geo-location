@@ -1,4 +1,4 @@
-const undefinedIfBlank = (str) => str === '' ? undefined : str
+const undefinedIfBlank = (str) => str === '' ? /* istanbul ignore next */ undefined : str
 
 export default (data) => ({
   ip: undefinedIfBlank(data.ip),

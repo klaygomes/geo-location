@@ -31,9 +31,11 @@ export const fetchLocation = function * fetchLocation ({type, payload}) {
   }
 }
 
-export const rootSaga = function * rootSaga () {
+/* istanbul ignore next: root saga is a configuration detail */
+function * rtSaga () {
   yield all([
     takeLatest(actionTypes.FETCH_MYLOCATION, fetchLocation),
     takeLatest(actionTypes.FETCH_HOSTNAMELOCATION, fetchLocation)
   ])
 }
+export const rootSaga = rtSaga

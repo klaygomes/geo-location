@@ -19,6 +19,16 @@ describe('store/store', () => {
         myLocationReducer(undefined, actionsCreators.myLocationStore(rawGeoData)
         )).toEqual(normalizedGeoData)
     })
+    it('should store correct state', () => {
+      expect(
+        myLocationReducer(undefined, actionsCreators.myLocationFail(new Error('dumb'))
+        )).toEqual({})
+    })
+    it('should store correct state', () => {
+      expect(
+        myLocationReducer(undefined, actionsCreators.myLocationReset()
+        )).toEqual({})
+    })
   })
   describe('hostnameLocationReducer', () => {
     it('should return initialState correct', () => {
@@ -29,6 +39,11 @@ describe('store/store', () => {
       expect(
         hostnameLocationReducer(undefined, actionsCreators.hostnameLocationStore(rawGeoData)
         )).toEqual(normalizedGeoData)
+    })
+    it('should store correct state', () => {
+      expect(
+        hostnameLocationReducer(undefined, actionsCreators.hostnameLocationFail(new Error('dumb'))
+        )).toEqual({})
     })
   })
   describe('selectors', () => {

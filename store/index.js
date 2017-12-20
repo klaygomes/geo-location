@@ -61,7 +61,8 @@ export const selectors = {
   }
 }
 
-export function ReduxWithSimpleSagas (iniState = initialState) {
+/* istanbul ignore next: no need to text configuration routines */
+function rdxWithSimpleSagas (iniState = initialState) {
   const sagaMiddleware = createSagaMiddleware()
 
   const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
@@ -82,3 +83,5 @@ export function ReduxWithSimpleSagas (iniState = initialState) {
 
   return store
 }
+
+export const ReduxWithSimpleSagas = rdxWithSimpleSagas

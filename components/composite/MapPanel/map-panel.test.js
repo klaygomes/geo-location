@@ -26,4 +26,11 @@ describe('<MapPanel />', () => {
     wrapper.update()
     expect(wrapper.find('LocationMapConfigurated').exists()).toBeFalsy()
   })
+  it('should delegates onHostname event', () => {
+    const onHostname = jest.fn()
+    const hostname = 'avenuecode.com'
+    const wrapper = mount(<MapPanel onHostname={onHostname} />)
+    wrapper.find('HostnameDispatcher').props().onDispatch(hostname)
+    expect(onHostname.mock.calls[0][0]).toEqual(hostname)
+  })
 })
