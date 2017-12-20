@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg  width="32px" height="32px"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<ellipse style="fill:#FFD15D;" cx="130.133" cy="450.133" rx="130.133" ry="61.867"/>
+<ellipse style="fill:#F6B64C;" cx="130.133" cy="450.133" rx="61.867" ry="29.867"/>
+<path style="fill:#435B6C;" d="M130.133,0c-13.867,0-25.6,11.733-25.6,25.6v424.533h51.2V25.6C155.733,11.733,145.067,0,130.133,0z"
+	/>
+<path style="fill:#4ABAA5;" d="M512,289.067c-118.4-73.6-236.8,73.6-356.267,0c0-82.133,0-164.267,0-246.4
+	c119.467,73.6,237.867-73.6,356.267,0c-30.933,22.4-60.8,58.667-91.733,102.4C451.2,183.467,481.067,229.333,512,289.067z"/>
+</svg>
