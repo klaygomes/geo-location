@@ -4,7 +4,7 @@
   "description": "* As a curious web surfer, I want to be able to locate both me and any website on a map.\r * I sometimes use a desktop, sometimes a tablet and sometimes a cell phone, so I need a responsive web page.",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 9001 -s ./ -c .storybook",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
