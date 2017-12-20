@@ -7,7 +7,7 @@
     "dev": "rm -rf .next && rm -rf node_modules/.cache && next",
     "build": "rm -rf .next && rm -rf node_modules/.cache && next build",
     "start": "rm -rf .next && rm -rf node_modules/.cache && next start -p $PORT",
-    "storybook": "start-storybook -p 9001 -s ./ -c .storybook",
+    "storybook": "rm -rf node_modules/.cache && start-storybook -p 9001 -s ./ -c .storybook",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
