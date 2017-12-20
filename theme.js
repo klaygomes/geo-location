@@ -13,7 +13,6 @@ const baseFont = 32
 
 export const typography = {
   fontFamily: `'Montserrat', sans-serif;`,
-  baseFontSize: `${baseFont}rem`,
   bigFontSize: `${72 / baseFont}rem`,
   regularFontSize: `${36 / baseFont}rem`,
   smallFontSize: `${20 / baseFont}rem`,
