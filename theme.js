@@ -9,7 +9,7 @@ export const themes = {
 }
 
 const defaultViewport = 1200
-const baseFont = 32
+const baseFont = 36
 
 export const typography = {
   fontFamily: `'Montserrat', sans-serif;`,
@@ -24,6 +24,6 @@ export const typography = {
 
 export const sizes = {
   defaultViewport: `${defaultViewport / baseFont}rem`,
-  defaultPadding: `${(defaultViewport * 0.04166666666) / baseFont}rem`,
+  defaultPadding: `${(defaultViewport * 0.03166666666) / baseFont}rem`,
   halfPadding: `${(defaultViewport * 0.02083333333) / baseFont}rem`
 }
