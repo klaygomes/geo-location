@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import LocationMap from './'
 import Holder from '../../../utils/Holder'
 import locations from '../../../data/locations'
-import googleMapConf from '../../../data/reactGoogleMapConf'
+import googleMapConf from '../../../utils/react-google-map-conf'
 
 storiesOf('Commons/LocationMap', module)
   .addDecorator(story => (

@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 
 import GeoLocation from './'
 import Holder from '../../../utils/Holder'
-import panelInformation from '../../../data/panelInformation'
+import panelInformation from '../../../data/panel-information'
 import locations from '../../../data/locations'
 
 storiesOf('Composite/GeoLocation', module)

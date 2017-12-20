@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import LocationPanel from './'
 import Holder from '../../../utils/Holder'
 
-import panelInformation from '../../../data/panelInformation'
+import panelInformation from '../../../data/panel-information'
 
 storiesOf('Commons/LocationPanel', module)
   .addDecorator(story => (
