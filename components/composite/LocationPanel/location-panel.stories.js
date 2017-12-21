@@ -6,7 +6,7 @@ import Holder from '../../../utils/Holder'
 
 storiesOf('Composite/LocationPanel', module)
   .addDecorator(story => (
-  <Holder>
+    <Holder>
       {story()}
     </Holder>
   ))

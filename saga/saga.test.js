@@ -7,7 +7,6 @@ import {fetchLocation, watchForErrors} from './'
 import actionsCreators from '../store/action-creators'
 
 import rawGeoData from '../data/raw-free-geoip'
-import actionCreators from '../store/action-creators'
 
 describe('saga/fetchLocation', () => {
   ['myLocation', 'hostnameLocation'].forEach((type) => {
@@ -42,6 +41,6 @@ describe('saga/watchForErrors', () => {
   })
   it('call showError on error action', () => {
     saga.next()
-    expect(saga.next({type: 'FAIL_DUMB_ERROR', error}).value).toEqual(put(actionCreators.errorShow(error)))
+    expect(saga.next({type: 'FAIL_DUMB_ERROR', error}).value).toEqual(put(actionsCreators.errorShow(error)))
   })
 })
