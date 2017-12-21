@@ -15,7 +15,7 @@ For this solution the following technologies were chosen:
 ## Online version
 You can access an online version of this application by navigating to https://geo-location-challenge.herokuapp.com/ or if you are using a cellphone use the qr code below
 
-![Scheme](static/geocode-site.png)
+![GeoLocation](static/geocode-site.png)
 
 
 ## Development scripts
@@ -52,6 +52,10 @@ You can access an online version of this application by navigating to https://ge
 
 > Generate coverage report into the folder `./coverage/Icov-report/`
 
+## Configuration file
+
+It is possible to change global configuration variables by editing `./env-config.js`. Check this file for more information.
+
 ## Storybook
 
 We use [Storybook]! If you want to check this out [click here](https://geo-location-storybook.herokuapp.com/).
@@ -76,18 +80,15 @@ In order to publish this application and its artifacts to heroku you will need t
 
 > Publish [Code Coverage] to `geo-location-coverage` heroku repository
 
-### `npm run test:coverage`
-
-> Generate coverage report into the folder `./coverage/Icov-report/`
-
 ## Commit Message Pattern
 
 The convention adopted on this project is based on [AngularJS Git Commit Msg Convention]. See the
 [commit history] for examples of properly-formatted commit messages.
 
 ```bash
-: 
+<type>: <subject>
 
+<body>
 ```
 
 ### Example commit message:
@@ -104,7 +105,7 @@ The first line cannot be longer than 70 characters, the second line is always bl
 other lines should be wrapped at 80 characters. The type and scope should
 be always lowercase as shown below.
 
-#### Allowed `` values:
+#### Allowed `type` values:
 
 * **feat** (new feature for the user, not a new feature for build script)
 * **fix** (bug fix for the user, not a fix to a build script)
@@ -126,8 +127,7 @@ For more info about message body, see:
 
 [AngularJS Git Commit Msg Convention]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
 [commit history]: https://bitbucket.org/klaygomes/ui-challenge/commits/all
-[heroku client]:
-https://devcenter.heroku.com/articles/heroku-cli
+[heroku client]:https://devcenter.heroku.com/articles/heroku-cli
 [Geo Location Application]:https://geo-location-challenge.herokuapp.com/
 [Storybook]:https://geo-location-storybook.herokuapp.com/
 [Code Coverage]:https://geo-location-coverage.herokuapp.com/
