@@ -14,12 +14,17 @@ describe('<LocationTable />', () => {
     expect(LocationTable.displayName).toBeTruthy()
   })
   describe('should display each field correctly', () => {
-    const wrapper = render(<LocationTable {...panelInformation} />).text()
-    for (let key of ['ip', 'contryName', 'regionName', 'city', 'zipCode', 'lat', 'lng']) {
+    const wrapper = render(<LocationTable {...panelInformation} />)
+    const wrapperText = wrapper.text()
+    for (let key of ['contryName', 'regionName', 'city', 'zipCode', 'lat', 'lng']) {
       it(`contains the text of key ${key} => ${panelInformation[key]}`, () => {
         const str = String(panelInformation[key] || '--')
-        expect(wrapper).toEqual(expect.stringContaining(str))
+        expect(wrapperText).toEqual(expect.stringContaining(str))
       })
     }
+    it('contains ip', () => {
+      const input = wrapper.find('input[name="ip"]')
+      expect(input[0].attribs.value).toEqual(panelInformation['ip'])
+    })
   })
 })

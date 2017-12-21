@@ -28,7 +28,7 @@ class LocationTable extends React.PureComponent {
         <tbody>
           <tr>
             <td>IP</td>
-            <td><input type='text' value={ip} style={{border: 'none', width: '100%'}} /></td>
+            <td><input type='text' name='ip' value={ip} readOnly style={{border: 'none', width: '100%'}} /></td>
           </tr>
           <tr>
             <td >Country</td>
