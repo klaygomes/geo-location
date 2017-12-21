@@ -3,7 +3,7 @@
  * Attention! Attention!
  * For the sake of simplicity I decided to put all redux-saga related stuff in this file
  */
-import {put, call, takeLatest, all} from 'redux-saga/effects'
+import {put, call, takeLatest, all, take} from 'redux-saga/effects'
 import axios from 'axios'
 
 import actionTypes from '../store/action-types'
@@ -17,6 +17,13 @@ const actionMapper = {
   [actionTypes.FETCH_HOSTNAMELOCATION]: {
     store: actionsCreators.hostnameLocationStore,
     fail: actionsCreators.hostnameLocationFail
+  }
+}
+
+export const watchForErrors = function * watchForErrors () {
+  while (1) {
+    const {error} = yield take(({type}) => /^FAIL/.test(type))
+    yield put(actionsCreators.errorShow(error))
   }
 }
 
@@ -35,7 +42,8 @@ export const fetchLocation = function * fetchLocation ({type, payload}) {
 function * rtSaga () {
   yield all([
     takeLatest(actionTypes.FETCH_MYLOCATION, fetchLocation),
-    takeLatest(actionTypes.FETCH_HOSTNAMELOCATION, fetchLocation)
+    takeLatest(actionTypes.FETCH_HOSTNAMELOCATION, fetchLocation),
+    watchForErrors()
   ])
 }
 export const rootSaga = rtSaga

@@ -1,4 +1,4 @@
-import {myLocationReducer, hostnameLocationReducer, selectors} from './'
+import {myLocationReducer, hostnameLocationReducer, metaReducer, selectors} from './'
 import actionsCreators from '../store/action-creators'
 
 import rawGeoData from '../data/raw-free-geoip'
@@ -44,6 +44,31 @@ describe('store/store', () => {
       expect(
         hostnameLocationReducer(undefined, actionsCreators.hostnameLocationFail(new Error('dumb'))
         )).toEqual({})
+    })
+  })
+  describe('metaReducer', () => {
+    it('should return initialState correct', () => {
+      const initialState = {dumb: 1}
+      expect(metaReducer(initialState, {})).toEqual(initialState)
+    })
+    it('should store correct state', () => {
+      const error = new Error('Dumb Message')
+      expect(
+        metaReducer(undefined, actionsCreators.errorShow(error)
+        )).toEqual({error: {
+        'errorObject': error,
+        'isVisible': true,
+        'message': error.message
+      }})
+    })
+    it('should store correct state', () => {
+      expect(
+        metaReducer(undefined, actionsCreators.errorHide()
+        )).toEqual({error: {
+        'errorObject': undefined,
+        'isVisible': false,
+        'message': undefined
+      }})
     })
   })
   describe('selectors', () => {

@@ -7,5 +7,7 @@ export default {
   myLocationReset: () => ({type: actionTypes.RESET_MYLOCATION}),
   hostnameLocationFetch: (payload) => ({type: actionTypes.FETCH_HOSTNAMELOCATION, payload}),
   hostnameLocationStore: (payload) => ({type: actionTypes.STORE_HOSTNAMELOCATION, payload}),
-  hostnameLocationFail: (error) => ({type: actionTypes.FAIL_HOSTNAMELOCATION, error})
+  hostnameLocationFail: (error) => ({type: actionTypes.FAIL_HOSTNAMELOCATION, error}),
+  errorShow: (error) => ({type: actionTypes.SHOW_ERROR, error}),
+  errorHide: () => ({type: actionTypes.HIDE_ERROR})
 }

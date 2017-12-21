@@ -13,7 +13,10 @@ import normalizeFreeGeoIp from '../utils/normalize-free-geoip'
 
 export const initialState = {
   myLocation: {},
-  hostnameLocation: {}
+  hostnameLocation: {},
+  meta: {
+    error: {}
+  }
 }
 
 // REDUCERS
@@ -38,6 +41,30 @@ export const hostnameLocationReducer = (state = initialState.hostnameLocation, a
   }
 }
 
+export const metaReducer = (state = initialState.meta, action) => {
+  switch (action.type) {
+    case actionTypes.SHOW_ERROR:
+      return {
+        ...state,
+        error: {
+          isVisible: true,
+          errorObject: action.error,
+          message: action.error.message
+        }
+      }
+    case actionTypes.HIDE_ERROR:
+      return {
+        ...state,
+        error: {
+          isVisible: false,
+          errorObject: undefined,
+          message: undefined
+        }
+      }
+    default: return state
+  }
+}
+
 // SELECTORS
 
 export const selectors = {
@@ -58,6 +85,12 @@ export const selectors = {
   },
   showMap (state) {
     return !!state.hostnameLocation.lng
+  },
+  getErrorMessage (state) {
+    return {
+      visible: state.meta.error.isVisible,
+      message: state.meta.error.message || 'Something went wrong...'
+    }
   }
 }
 
@@ -68,7 +101,8 @@ function rdxWithSimpleSagas (iniState = initialState) {
   const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
   const rootReducer = combineReducers({
     myLocation: myLocationReducer,
-    hostnameLocation: hostnameLocationReducer
+    hostnameLocation: hostnameLocationReducer,
+    meta: metaReducer
   })
 
   const store = createStore(

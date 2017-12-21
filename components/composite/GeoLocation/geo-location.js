@@ -36,6 +36,7 @@ class GeoLocation extends React.Component {
     hostnameLocation: locationShape,
     showMap: PropTypes.bool,
     showError: PropTypes.bool,
+    errorMessage: PropTypes.string,
     locationData: PropTypes.shape(locationShape)
   }
   constructor (props) {
@@ -72,11 +73,12 @@ class GeoLocation extends React.Component {
       hostnameLocation,
       showMap,
       showError,
+      errorMessage,
       locationData
     } = this.props
     return (
       <React.Fragment>
-        {showError && <Message onClick={this.handleOnErrorClick}>Something went wrong, please try again...</Message>}
+        {showError && <Message danger onClick={this.handleOnErrorClick}>{errorMessage}</Message>}
         <Title>GeoLocation Test</Title>
         <div className={className}>
           <Column first>

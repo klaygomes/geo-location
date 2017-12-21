@@ -47,4 +47,16 @@ describe('store/action-creators', () => {
       'error': error
     })
   })
+  it('errorHide', () => {
+    expect(actionsCreators.errorHide()).toEqual({
+      'type': actionTypes.HIDE_ERROR
+    })
+  })
+  it('errorShow', () => {
+    const error = new Error('dumb')
+    expect(actionsCreators.errorShow(error)).toEqual({
+      'type': actionTypes.SHOW_ERROR,
+      'error': error
+    })
+  })
 })
