@@ -19,7 +19,6 @@ END
 npm run storybook:publish
 echo $PACKAGE > .publish/package.json
 cd .publish
-heroku login
 git init
 heroku git:remote -a geo-location-storybook
 git add .

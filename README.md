@@ -80,15 +80,7 @@ In order to publish this application and its artifacts to heroku you will need t
 
 ### `./publish.sh`
 
-> Publish [Geo Location Application] to `geo-location-challenge` heroku repository
-
-### `./publish-storybook.sh`
-
-> Publish [Storybook] to `geo-location-storybook` heroku repository
-
-### `./publish-coverage.sh`
-
-> Publish [Code Coverage] to `geo-location-coverage` heroku repository
+> Publish [Geo Location Application], [Storybook] and [Code Coverage]  to `geo-location-challenge`, `geo-location-storybook` `geo-location-coverage` to  heroku repository respectively
 
 ## Windows users
 

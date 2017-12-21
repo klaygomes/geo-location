@@ -21,7 +21,6 @@ mkdir .publish
 cp -r ./coverage/lcov-report/* .publish
 echo $PACKAGE > .publish/package.json
 cd .publish
-heroku login
 git init
 heroku git:remote -a geo-location-coverage
 git add .
