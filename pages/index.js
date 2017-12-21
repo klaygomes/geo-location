@@ -42,8 +42,8 @@ export default () => (<Holder>
   <h3>Solution using React and Redux</h3>
   <p>This solution uses redux-sagas as effects management (SSR rendered), you can use Redux Dev Tools to check for Events and etc.
     <a href='/with-redux' target='_blank'>Click here</a> to access</p>
-  <h3>Simple solution with React internal state management</h3>
-  <p> <a href='/with-local-state' target='_blank'>Click here</a> to access</p>
+  /* <h3>Simple solution with React internal state management</h3>
+  <p> <a href='/with-local-state' target='_blank'>Click here</a> to access</p> */
   <h3>Source Code</h3>
   <p>Source code can be accessed <a href='https://bitbucket.org/klaygomes/ui-challenge/src' target='_blank'>here</a>.</p>
   <h3>Storybook</h3>
