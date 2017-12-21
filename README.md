@@ -2,7 +2,7 @@
 
 GeoLocation is a working web application which aims to retrieve details about the user's location and allow the user to find out the physical location of websites, by displaying its hosting position on a map.
 
-For this solution the following tecnologies were choosen:
+For this solution the following technologies were chosen:
 
  - React;
  - Redux;
@@ -12,6 +12,12 @@ For this solution the following tecnologies were choosen:
  - Enzyme;
  - Storybook
 
+## Online version
+You can access an online version of this application by navigating to https://geo-location-challenge.herokuapp.com/ or if you are using a cellphone use the qr code below
+
+![Scheme](static/geocode-site.png)
+
+
 ## Development scripts
 
 ### `npm install`
@@ -20,7 +26,7 @@ For this solution the following tecnologies were choosen:
 
 ### `npm run dev`
 
-> Start this project in development on `http://localhost:3000`. To use another port, you can run `npm run dev -- -p <your port here>`.
+> Start this project in development on `http://localhost:3000`. To use another port, you can run `npm run dev -- -p `.
 
 ### `npm run build`
 
@@ -46,9 +52,17 @@ For this solution the following tecnologies were choosen:
 
 > Generate coverage report into the folder `./coverage/Icov-report/`
 
+## Storybook
+
+We use [Storybook]! If you want to check this out [click here](https://geo-location-storybook.herokuapp.com/).
+
+## Code coverage
+
+You can check online a report of our [Code Coverage]
+
 ## How to Publish to Heroku
 
-In order to publish this application and its artefacts to heroku you will need to install [heroku client] and ask `write` access to each repository/application.
+In order to publish this application and its artifacts to heroku you will need to install [heroku client] and ask `write` access to each repository/application.
 
 ### `./publish.sh`
 
@@ -72,9 +86,8 @@ The convention adopted on this project is based on [AngularJS Git Commit Msg Con
 [commit history] for examples of properly-formatted commit messages.
 
 ```bash
-<type>: <subject>
+: 
 
-<body>
 ```
 
 ### Example commit message:
@@ -89,9 +102,9 @@ range. It is more well-tested in the wild.
 ### Message subject (first line)
 The first line cannot be longer than 70 characters, the second line is always blank and
 other lines should be wrapped at 80 characters. The type and scope should
-always be lowercase as shown below.
+be always lowercase as shown below.
 
-#### Allowed `<type>` values:
+#### Allowed `` values:
 
 * **feat** (new feature for the user, not a new feature for build script)
 * **fix** (bug fix for the user, not a fix to a build script)
