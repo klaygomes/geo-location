@@ -1,18 +1,17 @@
 /* global THEME_NAME */
 
 import React from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled from 'styled-components'
 import Head from 'next/head'
 import media from '../utils/media'
-import { typography } from '../theme'
 
 const Holder = styled.div`
   max-width: 75%;
   padding: 0 .5rem;
-  ${ media.phone`
+  ${media.phone`
   max-width: 100%;
   padding: 0 1rem;
-  ` }
+  `}
   margin: 0 auto;
   background-color: white;
   font-size: .8rem;
@@ -42,8 +41,8 @@ export default () => (<Holder>
   <h3>Solution using React and Redux</h3>
   <p>This solution uses redux-sagas as effects management (SSR rendered), you can use Redux Dev Tools to check for Events and etc.
     <a href='/with-redux' target='_blank'>Click here</a> to access</p>
-  /* <h3>Simple solution with React internal state management</h3>
-  <p> <a href='/with-local-state' target='_blank'>Click here</a> to access</p> */
+  {/* <h3>Simple solution with React internal state management</h3>
+  <p> <a href='/with-local-state' target='_blank'>Click here</a> to access</p> */}
   <h3>Source Code</h3>
   <p>Source code can be accessed <a href='https://bitbucket.org/klaygomes/ui-challenge/src' target='_blank'>here</a>.</p>
   <h3>Storybook</h3>
