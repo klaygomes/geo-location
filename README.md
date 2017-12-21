@@ -80,6 +80,10 @@ In order to publish this application and its artifacts to heroku you will need t
 
 > Publish [Code Coverage] to `geo-location-coverage` heroku repository
 
+## Windows users
+
+Everything will work fine if you use `git-bash` as your terminal shell. [Click here](https://git-scm.com/downloads) to download if you don't have it yet.
+
 ## Commit Message Pattern
 
 The convention adopted on this project is based on [AngularJS Git Commit Msg Convention]. See the
