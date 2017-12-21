@@ -4,8 +4,18 @@ import actionsCreators from '../store/action-creators'
 import rawGeoData from '../data/raw-free-geoip'
 import normalizedGeoData from '../data/normalized-free-geoip'
 
+const DATE_TO_USE = new Date('2017')
+const _Date = Date
+global.Date = jest.fn(() => DATE_TO_USE)
+global.Date.UTC = _Date.UTC
+global.Date.parse = _Date.parse
+global.Date.now = _Date.now
+
 const defaultState = {
-  myLocation: normalizedGeoData,
+  myLocation: {
+    ...normalizedGeoData,
+    lastUpdate: DATE_TO_USE
+  },
   hostnameLocation: normalizedGeoData
 }
 
@@ -17,7 +27,7 @@ describe('store/store', () => {
     it('should store correct state', () => {
       expect(
         myLocationReducer(undefined, actionsCreators.myLocationStore(rawGeoData)
-        )).toEqual(normalizedGeoData)
+        )).toEqual(defaultState.myLocation)
     })
     it('should store correct state', () => {
       expect(
@@ -80,9 +90,9 @@ describe('store/store', () => {
       expect(selectors.myLocation(defaultState)).toEqual(expectedValue)
     })
     it('locationData -> should returns correct value', () => {
-      expect(selectors.locationData(defaultState)).toEqual(normalizedGeoData)
+      expect(selectors.locationData(defaultState)).toEqual(defaultState.myLocationq)
     })
-    it('locationData -> should returns correct value', () => {
+    it('showMap -> should returns correct value', () => {
       expect(selectors.showMap(defaultState)).toEqual(true)
     })
   })
