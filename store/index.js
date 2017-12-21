@@ -23,9 +23,11 @@ export const initialState = {
 export const myLocationReducer = (state = initialState.myLocation, action) => {
   switch (action.type) {
     case actionTypes.STORE_MYLOCATION:
-      return normalizeFreeGeoIp(action.payload)
+      return {
+        ...normalizeFreeGeoIp(action.payload),
+        lastUpdate: new Date()
+      }
     case actionTypes.RESET_MYLOCATION:
-    case actionTypes.FAIL_MYLOCATION:
       return {}
     default: return state
   }
@@ -35,8 +37,6 @@ export const hostnameLocationReducer = (state = initialState.hostnameLocation, a
   switch (action.type) {
     case actionTypes.STORE_HOSTNAMELOCATION:
       return normalizeFreeGeoIp(action.payload)
-    case actionTypes.FAIL_HOSTNAMELOCATION:
-      return {}
     default: return state
   }
 }
