@@ -2,6 +2,7 @@ heroku login
 npm run build
 mkdir .publish
 cp -r .next .publish
+cp -r static .publish
 cp package*.json .publish
 cd .publish
 git init
