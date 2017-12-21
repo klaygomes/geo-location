@@ -1,4 +1,5 @@
 .vscode
 .next
+.publish
 node_modules
 coverage

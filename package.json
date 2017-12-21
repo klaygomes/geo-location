@@ -1,13 +1,18 @@
 {
   "name": "ui-challenge",
-  "version": "1.0.0",
-  "description": "* As a curious web surfer, I want to be able to locate both me and any website on a map.\r * I sometimes use a desktop, sometimes a tablet and sometimes a cell phone, so I need a responsive web page.",
+  "version": "1.1.0",
+  "description": "GeoLocation is a working web application which aims to retrieve details about the user's location and allow the user to find out the physical location of websites, by displaying its hosting position on a map.",
+  "engines": {
+    "node": "8.2.0",
+    "npm": "5.5.1"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf .next && rm -rf node_modules/.cache && next",
     "build": "rm -rf .next && rm -rf node_modules/.cache && next build",
-    "start": "rm -rf .next && rm -rf node_modules/.cache && next start -p $PORT",
+    "start": "next start -p $PORT",
     "storybook": "rm -rf node_modules/.cache && start-storybook -p 9001 -s ./ -c .storybook",
+    "storybook:publish": "rm -rf node_modules/.cache && build-storybook -c .storybook -o .publish",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
