@@ -1,5 +1,17 @@
 # Avenue Code UI Challenge #
 
+GeoLocation is a working web application which aims to retrieve details about the user's location and allow the user to find out the physical location of websites, by displaying its hosting position on a map.
+
+For this solution the following tecnologies were choosen:
+
+ - React;
+ - Redux;
+ - Redux Sagas;
+ - Next.js;
+ - Jest;
+ - Enzyme;
+ - Storybook
+
 ## Development scripts
 
 ### `npm install`
@@ -24,19 +36,39 @@
 
 ### `npm run test`
 
-> Execute tests
+> Execute all tests
 
 ### `npm run test:watch`
 
-> Execute tests, but keep runing watching for changes. Good for development.
+> Execute all tests, but keep watching for changes. Good for development.
 
 ### `npm run test:coverage`
 
-> Create coverage report
+> Generate coverage report into the folder `./coverage/Icov-report/`
 
-### Commit Message Pattern
+## How to Publish to Heroku
 
-This document is based on [AngularJS Git Commit Msg Convention]. See the
+In order to publish this application and its artefacts to heroku you will need to install [heroku client] and ask `write` access to each repository/application.
+
+### `./publish.sh`
+
+> Publish [Geo Location Application] to `geo-location-challenge` heroku repository
+
+### `./publish-storybook.sh`
+
+> Publish [Storybook] to `geo-location-storybook` heroku repository
+
+### `./publish-coverage.sh`
+
+> Publish [Code Coverage] to `geo-location-coverage` heroku repository
+
+### `npm run test:coverage`
+
+> Generate coverage report into the folder `./coverage/Icov-report/`
+
+## Commit Message Pattern
+
+The convention adopted on this project is based on [AngularJS Git Commit Msg Convention]. See the
 [commit history] for examples of properly-formatted commit messages.
 
 ```bash
@@ -45,7 +77,7 @@ This document is based on [AngularJS Git Commit Msg Convention]. See the
 <body>
 ```
 
-## Example commit message:
+### Example commit message:
 
 ```bash
 fix: ensure Range headers adhere more closely to RFC 2616
@@ -54,12 +86,12 @@ Add one new dependency, use `range-parser` (Express dependency) to compute
 range. It is more well-tested in the wild.
 ```
 
-## Message subject (first line)
+### Message subject (first line)
 The first line cannot be longer than 70 characters, the second line is always blank and
 other lines should be wrapped at 80 characters. The type and scope should
 always be lowercase as shown below.
 
-### Allowed `<type>` values:
+#### Allowed `<type>` values:
 
 * **feat** (new feature for the user, not a new feature for build script)
 * **fix** (bug fix for the user, not a fix to a build script)
@@ -80,4 +112,9 @@ For more info about message body, see:
 
 
 [AngularJS Git Commit Msg Convention]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
-[commit history]: https://github.com/karma-runner/karma/commits/master
+[commit history]: https://bitbucket.org/klaygomes/ui-challenge/commits/all
+[heroku client]:
+https://devcenter.heroku.com/articles/heroku-cli
+[Geo Location Application]:https://geo-location-challenge.herokuapp.com/
+[Storybook]:https://geo-location-storybook.herokuapp.com/
+[Code Coverage]:https://geo-location-coverage.herokuapp.com/

@@ -24,7 +24,9 @@ export default () => (<Holder>
   <h3>Source Code</h3>
   <p>Source code can be accessed <a href='https://bitbucket.org/klaygomes/ui-challenge/src' target='_blank'>here</a>.</p>
   <h3>Storybook</h3>
-  <p>You can access the Storybook <a href='https://cryptoboard-storybook.herokuapp.com' target='_blank'>clicking here.</a></p>
+  <p>You can access the Storybook <a href='https://geo-location-storybook.herokuapp.com/' target='_blank'>clicking here.</a></p>
+  <h3>Code Coverage</h3>
+  <p>You can access the latest code coverage <a href='https://geo-location-coverage.herokuapp.com/' target='_blank'>clicking here.</a></p>
   <h2>What is missing</h2>
   <ul>
     <li>Fix FOIT</li>
@@ -34,7 +36,7 @@ export default () => (<Holder>
     <li>I18N</li>
   </ul>
   <p>You can acess this page using your cellphone</p>
-  <img src='/static/cryptoboard.jpg' />
+  <img src='/static/geocode-site.jpg' />
   <div>My linkedin: https://www.linkedin.com/in/klaygomes/</div>
   <div>Phone: +55 11 977387576</div>
 </Holder>)
