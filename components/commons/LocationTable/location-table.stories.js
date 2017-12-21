@@ -1,5 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+
 
 import LocationPanel from './'
 import Holder from '../../../utils/Holder'
@@ -21,6 +23,6 @@ storiesOf('Commons/LocationPanel', module)
   .add('Populated', () => (
     <React.Fragment>
       <p>Location panel populated</p>
-      <LocationPanel {...panelInformation} />
+      <LocationPanel {...panelInformation} onRequestInformation={action('onRequestInformation')} />
     </React.Fragment>
   ))

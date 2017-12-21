@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, render } from 'enzyme'
+import { shallow, render, mount } from 'enzyme'
 import 'jest-styled-components'
 
 import LocationTable from './'
@@ -26,5 +26,15 @@ describe('<LocationTable />', () => {
       const input = wrapper.find('input[name="ip"]')
       expect(input[0].attribs.value).toEqual(panelInformation['ip'])
     })
+  })
+
+  it('should delegate onRequestInformation for each item', () => {
+    const onRequestInformation = jest.fn()
+    const wrapper = mount(<LocationTable {...panelInformation} onRequestInformation={onRequestInformation} />)
+    const infoImges = wrapper.find('img[info]')
+    infoImges.forEach((img) => {
+      img.props().onClick()
+    })
+    expect(onRequestInformation.mock.calls.length).toBe(infoImges.length)
   })
 })

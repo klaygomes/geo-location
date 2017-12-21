@@ -13,6 +13,7 @@ class LocationPanel extends React.PureComponent {
   static propTypes = {
     onRequestMyLocation: PropTypes.func,
     onResetMyLocation: PropTypes.func,
+    onRequestInformation: PropTypes.func,
     locationData: PropTypes.shape(locationDataShape),
     className: PropTypes.string
   }
@@ -20,6 +21,12 @@ class LocationPanel extends React.PureComponent {
     super(props)
     this.handleRequestMyLocation = this.handleRequestMyLocation.bind(this)
     this.handleResetMyLocation = this.handleResetMyLocation.bind(this)
+    this.handleOnRequestInformation = this.handleOnRequestInformation.bind(this)
+  }
+  handleOnRequestInformation (...args) {
+    if (typeof this.props.onRequestInformation === 'function') {
+      this.props.onRequestInformation(...args)
+    }
   }
   handleRequestMyLocation (ev) {
     if (typeof this.props.onRequestMyLocation === 'function') {
@@ -36,7 +43,7 @@ class LocationPanel extends React.PureComponent {
     return (
       <div className={className}>
         <Title fontWeight={500}>Estimated location</Title>
-        <LocationTable className={'centered'} {...this.props.locationData} />
+        <LocationTable className={'centered'} {...this.props.locationData} onRequestInformation={this.handleOnRequestInformation} />
         <div className={'centered'}>
           <Button name='my-location' onClick={this.handleRequestMyLocation} className={'spaced'}>My location</Button>
           <Button name='reset-location' onClick={this.handleResetMyLocation} className={'spaced'}>Reset location</Button>

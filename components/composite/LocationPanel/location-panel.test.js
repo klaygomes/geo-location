@@ -18,10 +18,16 @@ describe('<Message />', () => {
     wrapper.find('Button[name="my-location"]').props().onClick()
     expect(onRequestMyLocation.mock.calls.length).toBe(1)
   })
-  it('should delegates onRequestMyLocation event', () => {
+  it('should delegates onResetMyLocation event', () => {
     const onResetMyLocation = jest.fn()
     const wrapper = mount(<LocationPanel onResetMyLocation={onResetMyLocation} />)
     wrapper.find('Button[name="reset-location"]').props().onClick()
     expect(onResetMyLocation.mock.calls.length).toBe(1)
+  })
+  it('should delegates onRequestInformation event', () => {
+    const onRequestInformation = jest.fn()
+    const wrapper = mount(<LocationPanel onRequestInformation={onRequestInformation} />)
+    wrapper.find('LocationTable').props().onRequestInformation()
+    expect(onRequestInformation.mock.calls.length).toBe(1)
   })
 })

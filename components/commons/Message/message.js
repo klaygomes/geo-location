@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {typography} from '../../../theme'
 
 const Message = styled.div`
+
     background-color: ${({theme, danger}) => danger ? theme.error : theme.success};
     font-size: ${typography.regularFontSize};
     color:  ${({theme}) => theme.textColor};

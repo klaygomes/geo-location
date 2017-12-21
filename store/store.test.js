@@ -90,7 +90,7 @@ describe('store/store', () => {
       expect(selectors.myLocation(defaultState)).toEqual(expectedValue)
     })
     it('locationData -> should returns correct value', () => {
-      expect(selectors.locationData(defaultState)).toEqual(defaultState.myLocationq)
+      expect(selectors.locationData(defaultState)).toEqual(defaultState.myLocation)
     })
     it('showMap -> should returns correct value', () => {
       expect(selectors.showMap(defaultState)).toEqual(true)

@@ -41,10 +41,17 @@ class GeoLocation extends React.Component {
   }
   constructor (props) {
     super(props)
+
+    this.state = {
+      showInfo: false,
+      infoMessage: ''
+    }
     this.handleRequestMyLocation = this.handleRequestMyLocation.bind(this)
     this.handleResetMyLocation = this.handleResetMyLocation.bind(this)
     this.handleHostnameDispatch = this.handleHostnameDispatch.bind(this)
+    this.handleOnRequestInformation = this.handleOnRequestInformation.bind(this)
     this.handleOnErrorClick = this.handleOnErrorClick.bind(this)
+    this.handleCloseInfo = this.handleCloseInfo.bind(this)
   }
   handleHostnameDispatch (hostname) {
     if (typeof this.props.onHostname === 'function') {
@@ -66,6 +73,21 @@ class GeoLocation extends React.Component {
       this.props.onErrorClick(ev)
     }
   }
+  handleOnRequestInformation (...args) {
+    const [_, info, date] = args
+    const infoMessage = `This is your ${info} according to ${API_PROVIDER_NAME} at ${date}`
+    this.setState({
+      showInfo: true,
+      infoMessage
+    })
+  }
+
+  handleCloseInfo () {
+    this.setState({
+      showInfo: false,
+      infoMessage: ''
+    })
+  }
   render () {
     const {
       className,
@@ -79,12 +101,15 @@ class GeoLocation extends React.Component {
     return (
       <React.Fragment>
         {showError && <Message danger onClick={this.handleOnErrorClick}>{errorMessage}</Message>}
+        {this.state.showInfo && <Message onClick={this.handleCloseInfo}>{this.state.infoMessage}</Message>}
+
         <Title>GeoLocation Test</Title>
         <div className={className}>
           <Column first>
             <LocationPanel
               onRequestMyLocation={this.handleRequestMyLocation}
               onResetMyLocation={this.handleResetMyLocation}
+              onRequestInformation={this.handleOnRequestInformation}
               locationData={locationData}
             />
           </Column>
