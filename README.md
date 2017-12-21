@@ -17,6 +17,12 @@ You can access an online version of this application by navigating to https://ge
 
 ![GeoLocation](static/geocode-site.png)
 
+## Requirements
+
+- Node v8.x.x
+- NPM v5.x.x
+
+In order to build this application localy you must first install [nodejs](https://nodejs.org/en/)
 
 ## Development scripts
 
@@ -64,6 +70,10 @@ We use [Storybook]! If you want to check this out [click here](https://geo-locat
 
 You can check online a report of our [Code Coverage]
 
+## Themes
+
+This application is shipped with a basic `dark` theme, fell free to create you own changing `./theme.js` file and then editing `./env-config.json`, you should also create a stylesheet file into `./static/styles/` with the following name  `theme.[THEME_NAME].css`, where `THEME_NAME` is the name you gave to your theme, this is only needed if you wish a global style.
+
 ## How to Publish to Heroku
 
 In order to publish this application and its artifacts to heroku you will need to install [heroku client] and ask `write` access to each repository/application.
@@ -82,7 +92,7 @@ In order to publish this application and its artifacts to heroku you will need t
 
 ## Windows users
 
-Everything will work fine if you use `git-bash` as your terminal shell. [Click here](https://git-scm.com/downloads) to download if you don't have it yet.
+Everything will work fine if you use `git-bash` as your terminal shell. [Click here](https://git-scm.com/downloads) to download/install if you don't have it yet.
 
 ## Commit Message Pattern
 

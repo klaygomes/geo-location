@@ -28,7 +28,7 @@ class LocationTable extends React.PureComponent {
         <tbody>
           <tr>
             <td>IP</td>
-            <td>{ip}</td>
+            <td><input type='text' value={ip} style={{border: 'none', width: '100%'}} /></td>
           </tr>
           <tr>
             <td >Country</td>
@@ -60,6 +60,8 @@ class LocationTable extends React.PureComponent {
 }
 
 export default styled(LocationTable)`
+    max-width: 100vw;
+    overflow: hidden;
     tr:nth-child(odd){
         background-color: ${({theme}) => theme.lineColor};
     }
@@ -79,9 +81,15 @@ export default styled(LocationTable)`
 
     td:nth-child(2){
         font-weight: ${typography.thin};
-        
+        input {
+          font-weight: ${typography.thin};
+        }
         background-color: rgba(255, 255, 255, .1);
-        min-width: 12rem;
+        width: 12rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+  
 
 `

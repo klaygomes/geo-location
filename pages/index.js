@@ -2,25 +2,26 @@
 
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
-
+import Head from 'next/head'
+import media from '../utils/media'
 import { typography } from '../theme'
-injectGlobal`
-  body {
-    font-family: ${typography.fontFamily};
-    padding: 0 auto;
-    margin: 0;
-    font-size: 26px;
-  }
-`
 
 const Holder = styled.div`
   max-width: 75%;
   padding: 0 .5rem;
+  ${ media.phone`
+  max-width: 100%;
+  padding: 0 1rem;
+  ` }
   margin: 0 auto;
   background-color: white;
+  font-size: .8rem;
 `
 
 export default () => (<Holder>
+  <Head>
+    <link rel='stylesheet' href={`/static/styles/fixnext.${THEME_NAME}.css`} />
+  </Head>
   <h1>Welcome to my solution page</h1>
   <p>GeoLocation is a working web application which aims to retrieve details about the user's location and allow the user to find out the physical location of websites, by displaying its hosting position on a map.</p>
 
