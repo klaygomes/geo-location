@@ -23,6 +23,13 @@ describe('<Button />', () => {
     expect(toJson(wrapper)).toHaveStyleRule('background-color', colorLuminance(theme.main, 0.4))
   })
 
+  it('should clickable', () => {
+    const mockCallback = jest.fn()
+    const wrapper = mount(<Button onClick={mockCallback} theme={theme} />)
+    wrapper.simulate('click')
+    expect(mockCallback.mock.calls.length).toBe(1)
+  })
+
   describe('should be disabled', () => {
     it('has correct style', () => {
       const wrapper = shallow(<Button theme={theme} disabled />)
