@@ -31,7 +31,7 @@ class LocationTable extends React.Component {
 
     this.handleOnRequestInformation = Object.keys(this.descriptionTable).reduce((acc, cur) => {
       acc[cur] = () => {
-        if (typeof this.props.onRequestInformation === 'function') {
+        if (typeof this.props.onRequestInformation === 'function' && this.props.lastUpdate) {
           this.props.onRequestInformation(cur, this.descriptionTable[cur], this.props.lastUpdate)
         }
       }
