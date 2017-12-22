@@ -28,7 +28,10 @@ class LocationTable extends React.Component {
 
   constructor (props) {
     super(props)
-    
+
+    // I know it should be easier/readeable to use this.onRequestInformatino.bind(this, param1, param2...)
+    // for each onClick, but it brings some performance implications.
+    // more info: https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f
     this.handleOnRequestInformation = Object.keys(this.descriptionTable).reduce((acc, cur) => {
       acc[cur] = () => {
         if (typeof this.props.onRequestInformation === 'function' && this.props.lastUpdate) {
