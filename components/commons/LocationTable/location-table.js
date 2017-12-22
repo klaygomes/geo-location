@@ -28,7 +28,7 @@ class LocationTable extends React.Component {
 
   constructor (props) {
     super(props)
-
+    
     this.handleOnRequestInformation = Object.keys(this.descriptionTable).reduce((acc, cur) => {
       acc[cur] = () => {
         if (typeof this.props.onRequestInformation === 'function' && this.props.lastUpdate) {
@@ -57,41 +57,41 @@ class LocationTable extends React.Component {
           <tr>
             <td>IP</td>
             <td><input type='text' name='ip' value={ip} readOnly style={{border: 'none', width: '100%'}} /></td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['ip']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['ip']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
           </tr>
           <tr>
             <td>Country</td>
             <td>{contryName}</td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['contryName']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['contryName']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
           </tr>
           <tr>
             <td>Region</td>
             <td>{regionName}</td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['regionName']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['regionName']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
 
           </tr>
           <tr>
             <td >City</td>
             <td>{city}</td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['city']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['city']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
 
           </tr>
           <tr>
             <td>Zip Code</td>
             <td>{zipCode}</td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['zipCode']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['zipCode']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
 
           </tr>
           <tr>
             <td>Latitude</td>
             <td>{lat}</td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['lat']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['lat']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
 
           </tr>
           <tr>
             <td>Longitude</td>
             <td>{lng}</td>
-            <td><img info='true' onClick={this.handleOnRequestInformation['lng']} width='24px' height='24px' src='https://image.flaticon.com/icons/svg/189/189665.svg' /></td>
+            <td><img info='true' onClick={this.handleOnRequestInformation['lng']} width='24px' height='24px' src='/static/icons/info.svg' /></td>
           </tr>
         </tbody>
       </table>)
