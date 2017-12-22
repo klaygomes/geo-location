@@ -3,7 +3,12 @@ import { shallow, render, mount } from 'enzyme'
 import 'jest-styled-components'
 
 import LocationTable from './'
-import panelInformation from '../../../data/panel-information'
+import pnlInformation from '../../../data/panel-information'
+
+const panelInformation = {
+  ...pnlInformation,
+  lastUpdate: new Date()
+}
 
 describe('<LocationTable />', () => {
   it('should render without crashing', () => {
@@ -36,5 +41,15 @@ describe('<LocationTable />', () => {
       img.props().onClick()
     })
     expect(onRequestInformation.mock.calls.length).toBe(infoImges.length)
+  })
+
+  it('should pass onRequestInformation for each item if not lastUpdate', () => {
+    const onRequestInformation = jest.fn()
+    const wrapper = mount(<LocationTable {...pnlInformation} onRequestInformation={onRequestInformation} />)
+    const infoImges = wrapper.find('img[info]')
+    infoImges.forEach((img) => {
+      img.props().onClick()
+    })
+    expect(onRequestInformation.mock.calls.length).toBe(0)
   })
 })
