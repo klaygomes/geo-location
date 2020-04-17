@@ -1,4 +1,4 @@
-# Avenue Code UI Challenge #
+# GeoLocation #
 
 GeoLocation is a working web application which aims to retrieve details about the user's location and allow the user to find out the physical location of websites, by displaying its hosting position on a map.
 
