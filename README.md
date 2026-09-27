@@ -137,3 +137,7 @@ For more info about message body, see:
 [Geo Location Application]:https://geo-location-challenge.herokuapp.com/
 [Storybook]:https://geo-location-storybook.herokuapp.com/
 [Code Coverage]:https://geo-location-coverage.herokuapp.com/
+
+---
+
+Made by Cleiton at [Esta couve flor](https://www.estacouveflor.com), a blog about the whole stack, from React on the screen down to the clock tree of an STM32.
